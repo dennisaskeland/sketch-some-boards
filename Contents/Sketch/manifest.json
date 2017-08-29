@@ -1,0 +1,74 @@
+{
+  "name": "Social Media Boards",
+  "identifier": "com.sketchapp.plugins.someboards",
+  "version": "0.0.1",
+  "description": "A currated list of social media artboard sizes",
+  "authorEmail" : "dennis@askelandmedia.no",
+  "author" : "Dennis Askeland",
+  "commands": [
+    {
+      "script": "facebook.js",
+      "handler": "fbSharedVideo",
+      "shortcut": "",
+      "name": "Shared Video - 1200x675",
+      "identifier": "fbSharedVideo"
+    },{
+      "script": "facebook.js",
+      "handler": "fbSharedImage",
+      "shortcut": "",
+      "name": "Shared Image - 1200x630",
+      "identifier": "fbSharedImage"
+    },
+    {
+      "script": "facebook.js",
+      "handler": "fbSharedLink",
+      "shortcut": "",
+      "name": "Shared Link - 1200x627",
+      "identifier": "fbSharedLink"
+    },
+    {
+      "script": "facebook.js",
+      "handler": "fbCoverPhoto",
+      "shortcut": "",
+      "name": "Cover Photo - 828x315",
+      "identifier": "fbCoverPhoto"
+    },
+    {
+      "script": "facebook.js",
+      "handler": "fbProfilePhoto",
+      "shortcut": "",
+      "name": "Profile Photo - 180x180",
+      "identifier": "fbProfilePhoto"
+    },
+    {
+      "script": "facebook.js",
+      "handler": "fbAppImage",
+      "shortcut": "",
+      "name": "App Image - 111x74",
+      "identifier": "fbAppImage"
+    },
+  ],
+  "menu": {
+    "items": [
+      {
+        "title": "Facebook",
+        "items": [
+          "fbSharedVideo",
+          "fbSharedImage",
+          "fbSharedLink",
+          "fbCoverPhoto",
+          "fbProfilePhoto",
+          "fbAppImage"
+        ]
+      },
+      {
+        "title": "Instagram",
+        "items": []
+      },
+      {
+        "title": "Twitter",
+        "items": []
+      }
+    ]
+  }
+}

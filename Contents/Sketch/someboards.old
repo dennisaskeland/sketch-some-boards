@@ -1,0 +1,114 @@
+function rightmostArtboardX() {
+  artboards = [[doc currentPage] artboards]
+  firstArtboard = artboards[0]
+  firstArtboardRect = [firstArtboard absoluteRect]
+  maxXPos = [firstArtboardRect maxX]
+  loop = [artboards objectEnumerator]
+  while (artboard = [loop nextObject]) {
+    artboardRect = [artboard absoluteRect]
+    artboardMaxX = [artboardRect maxX]
+    if (artboardMaxX >= maxXPos) {
+      maxXPos = artboardMaxX
+    }
+  }
+  return maxXPos
+}
+
+function topmostArtboardY() {
+  artboards = [[doc currentPage] artboards]
+  firstArtboard = artboards[0]
+  firstArtboardRect = [firstArtboard absoluteRect]
+  minYPos = [firstArtboardRect minY]
+  loop = [artboards objectEnumerator]
+  while (artboard = [loop nextObject]) {
+    artboardRect = [artboard absoluteRect]
+    artboardMinY = [artboardRect minY]
+    if (artboardMinY <= minYPos) {
+      minYPos = artboardMinY
+    }
+  }
+  return minYPos
+}
+
+
+
+function fbProfilePhoto(context) {
+  var sketch = context.api()
+  doc = context.document
+
+  function createNewArtboard() {
+    newArtboardWidth = 180
+    newArtboardHeight = 180
+    newArtboardX = 0
+    newArtboardY = 0
+
+    newArtboard = [MSArtboardGroup new]
+    [newArtboard setName:'Facebook; Profile Photo 180x180']
+    newArtboardFrame = [newArtboard frame]
+    [newArtboardFrame setWidth:newArtboardWidth]
+    [newArtboardFrame setHeight:newArtboardHeight]
+    [newArtboardFrame setX:newArtboardX]
+    [newArtboardFrame setY:newArtboardY]
+
+    page = [doc currentPage]
+    [page addLayers:[NSArray arrayWithObjects:newArtboard]]
+
+    return newArtboard
+  }
+
+  createNewArtboard()
+}
+
+function fbCoverPhoto(context) {
+  var sketch = context.api()
+  doc = context.document
+
+  function createNewArtboard() {
+    newArtboardWidth = 828
+    newArtboardHeight = 315
+    newArtboardX = 0
+    newArtboardY = 0
+
+    newArtboard = [MSArtboardGroup new]
+    [newArtboard setName:'Facebook; Cover Photo 828x315']
+    newArtboardFrame = [newArtboard frame]
+    [newArtboardFrame setWidth:newArtboardWidth]
+    [newArtboardFrame setHeight:newArtboardHeight]
+    [newArtboardFrame setX:newArtboardX]
+    [newArtboardFrame setY:newArtboardY]
+
+    page = [doc currentPage]
+    [page addLayers:[NSArray arrayWithObjects:newArtboard]]
+
+    return newArtboard
+  }
+
+  createNewArtboard()
+}
+
+function fbSharedImage(context) {
+  var sketch = context.api()
+  doc = context.document
+
+  function createNewArtboard() {
+    newArtboardWidth = 1200
+    newArtboardHeight = 630
+    newArtboardX = rightmostArtboardX() + 100
+    newArtboardY = topmostArtboardY()
+
+    newArtboard = [MSArtboardGroup new]
+    [newArtboard setName:'Facebook; Shared Image 1200x630']
+    newArtboardFrame = [newArtboard frame]
+    [newArtboardFrame setWidth:newArtboardWidth]
+    [newArtboardFrame setHeight:newArtboardHeight]
+    [newArtboardFrame setX:newArtboardX]
+    [newArtboardFrame setY:newArtboardY]
+
+    page = [doc currentPage]
+    [page addLayers:[NSArray arrayWithObjects:newArtboard]]
+
+    return newArtboard
+  }
+
+  createNewArtboard()
+}
